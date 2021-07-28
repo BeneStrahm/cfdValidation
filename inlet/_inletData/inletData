@@ -1,0 +1,34 @@
+Als Basis dient die DIN EN 1991-1-4-NA (Anhang A, S.14, Anhang B, S.15&16). 
+
+Diese Profile werden auch in etwa in den Windkanalexperimenten (profile.pdf) verwendet. Siehe Excel-Gegenüberstellung.
+
+Profil:
+Typ: 
+alpha = 0,16
+vb = 25,0 m/s
+Mittleres Profil:       vm(z) = 1,00 x vb (z/10) ^ alpha        [Das ist das über die Zeit gemittelte Profil]
+Böenwindgeschwindigkeit:vp(z) = 1,45 x vb (z/10) ^ 0,120        [Zur Validierung, das ist in etwa das Profil der maximalen Böen über die Zeit]
+
+
+Turbulenzintensität: 
+Nach Norm würde folgendes Profil rauskommen
+Profil: Iv(z) = 0,19 x (z/10) ^ – alpha [in x-Richtung]
+
+Ich würde aber folgendes verwenden, das ist ein fitting der WT-Daten:
+Profil: Iv(z) = 0,15 x (z/10) ^ – 0,3   [in x-Richtung]
+
+Spektrum:
+# Exact Kaimal Spectra, see "Kaimal, Wyngaard, Izumi, Cote - Spectral
+# characteristics of surface layer turbulence", Quarterly Journal of the Royal 
+# Meteorological Society 98 (1972) or "Cheynet, Jakobsen, Obhrai - Spectral characteristics
+# of surface-layer turbulence in the North Sea" (2017)
+
+Sa_exact= lambda n : (a * n ** gamma) / (c + b * n ** alpha) ** beta
+
+# Kaimal Spectra:
+a       = 1 * 52.5                      # Factor 1 or 2 for one- or two-sided specta
+b       = 33 
+alpha   = 1
+beta    = 5/3
+gamma   = 1
+c       = 1
