@@ -1,0 +1,530 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.0                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     4.0;
+    format      ascii;
+    class       dictionary;
+    object      surfaceFeatureExtractDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+
+// AUTOMATICALLY INSERT EACH LEVEL AFTER FOLLOWING KEYWORD
+    // CONTENT FOR SURFACEFEATUREEXTRACTDICT AUTOMATICALLY CREATED
+
+level000.stl
+{
+    extractionMethod extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 180;
+    }
+    writeFeatureEdgeMesh yes;
+    writeObj yes;
+}
+
+level001.stl
+{
+    extractionMethod extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 180;
+    }
+    writeFeatureEdgeMesh yes;
+    writeObj yes;
+}
+
+level002.stl
+{
+    extractionMethod extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 180;
+    }
+    writeFeatureEdgeMesh yes;
+    writeObj yes;
+}
+
+level003.stl
+{
+    extractionMethod extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 180;
+    }
+    writeFeatureEdgeMesh yes;
+    writeObj yes;
+}
+
+level004.stl
+{
+    extractionMethod extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 180;
+    }
+    writeFeatureEdgeMesh yes;
+    writeObj yes;
+}
+
+level005.stl
+{
+    extractionMethod extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 180;
+    }
+    writeFeatureEdgeMesh yes;
+    writeObj yes;
+}
+
+level006.stl
+{
+    extractionMethod extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 180;
+    }
+    writeFeatureEdgeMesh yes;
+    writeObj yes;
+}
+
+level007.stl
+{
+    extractionMethod extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 180;
+    }
+    writeFeatureEdgeMesh yes;
+    writeObj yes;
+}
+
+level008.stl
+{
+    extractionMethod extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 180;
+    }
+    writeFeatureEdgeMesh yes;
+    writeObj yes;
+}
+
+level009.stl
+{
+    extractionMethod extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 180;
+    }
+    writeFeatureEdgeMesh yes;
+    writeObj yes;
+}
+
+level010.stl
+{
+    extractionMethod extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 180;
+    }
+    writeFeatureEdgeMesh yes;
+    writeObj yes;
+}
+
+level011.stl
+{
+    extractionMethod extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 180;
+    }
+    writeFeatureEdgeMesh yes;
+    writeObj yes;
+}
+
+level012.stl
+{
+    extractionMethod extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 180;
+    }
+    writeFeatureEdgeMesh yes;
+    writeObj yes;
+}
+
+level013.stl
+{
+    extractionMethod extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 180;
+    }
+    writeFeatureEdgeMesh yes;
+    writeObj yes;
+}
+
+level014.stl
+{
+    extractionMethod extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 180;
+    }
+    writeFeatureEdgeMesh yes;
+    writeObj yes;
+}
+
+level015.stl
+{
+    extractionMethod extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 180;
+    }
+    writeFeatureEdgeMesh yes;
+    writeObj yes;
+}
+
+level016.stl
+{
+    extractionMethod extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 180;
+    }
+    writeFeatureEdgeMesh yes;
+    writeObj yes;
+}
+
+level017.stl
+{
+    extractionMethod extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 180;
+    }
+    writeFeatureEdgeMesh yes;
+    writeObj yes;
+}
+
+level018.stl
+{
+    extractionMethod extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 180;
+    }
+    writeFeatureEdgeMesh yes;
+    writeObj yes;
+}
+
+level019.stl
+{
+    extractionMethod extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 180;
+    }
+    writeFeatureEdgeMesh yes;
+    writeObj yes;
+}
+
+level020.stl
+{
+    extractionMethod extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 180;
+    }
+    writeFeatureEdgeMesh yes;
+    writeObj yes;
+}
+
+level021.stl
+{
+    extractionMethod extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 180;
+    }
+    writeFeatureEdgeMesh yes;
+    writeObj yes;
+}
+
+level022.stl
+{
+    extractionMethod extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 180;
+    }
+    writeFeatureEdgeMesh yes;
+    writeObj yes;
+}
+
+level023.stl
+{
+    extractionMethod extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 180;
+    }
+    writeFeatureEdgeMesh yes;
+    writeObj yes;
+}
+
+level024.stl
+{
+    extractionMethod extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 180;
+    }
+    writeFeatureEdgeMesh yes;
+    writeObj yes;
+}
+
+level025.stl
+{
+    extractionMethod extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 180;
+    }
+    writeFeatureEdgeMesh yes;
+    writeObj yes;
+}
+
+level026.stl
+{
+    extractionMethod extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 180;
+    }
+    writeFeatureEdgeMesh yes;
+    writeObj yes;
+}
+
+level027.stl
+{
+    extractionMethod extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 180;
+    }
+    writeFeatureEdgeMesh yes;
+    writeObj yes;
+}
+
+level028.stl
+{
+    extractionMethod extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 180;
+    }
+    writeFeatureEdgeMesh yes;
+    writeObj yes;
+}
+
+level029.stl
+{
+    extractionMethod extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 180;
+    }
+    writeFeatureEdgeMesh yes;
+    writeObj yes;
+}
+
+level030.stl
+{
+    extractionMethod extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 180;
+    }
+    writeFeatureEdgeMesh yes;
+    writeObj yes;
+}
+
+level031.stl
+{
+    extractionMethod extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 180;
+    }
+    writeFeatureEdgeMesh yes;
+    writeObj yes;
+}
+
+level032.stl
+{
+    extractionMethod extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 180;
+    }
+    writeFeatureEdgeMesh yes;
+    writeObj yes;
+}
+
+level033.stl
+{
+    extractionMethod extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 180;
+    }
+    writeFeatureEdgeMesh yes;
+    writeObj yes;
+}
+
+level034.stl
+{
+    extractionMethod extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 180;
+    }
+    writeFeatureEdgeMesh yes;
+    writeObj yes;
+}
+
+level035.stl
+{
+    extractionMethod extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 180;
+    }
+    writeFeatureEdgeMesh yes;
+    writeObj yes;
+}
+
+level036.stl
+{
+    extractionMethod extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 180;
+    }
+    writeFeatureEdgeMesh yes;
+    writeObj yes;
+}
+
+level037.stl
+{
+    extractionMethod extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 180;
+    }
+    writeFeatureEdgeMesh yes;
+    writeObj yes;
+}
+
+level038.stl
+{
+    extractionMethod extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 180;
+    }
+    writeFeatureEdgeMesh yes;
+    writeObj yes;
+}
+
+level039.stl
+{
+    extractionMethod extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 180;
+    }
+    writeFeatureEdgeMesh yes;
+    writeObj yes;
+}
+
+level040.stl
+{
+    extractionMethod extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 180;
+    }
+    writeFeatureEdgeMesh yes;
+    writeObj yes;
+}
+
+level041.stl
+{
+    extractionMethod extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 180;
+    }
+    writeFeatureEdgeMesh yes;
+    writeObj yes;
+}
+
+level042.stl
+{
+    extractionMethod extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 180;
+    }
+    writeFeatureEdgeMesh yes;
+    writeObj yes;
+}
+
+level043.stl
+{
+    extractionMethod extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 180;
+    }
+    writeFeatureEdgeMesh yes;
+    writeObj yes;
+}
+
+level044.stl
+{
+    extractionMethod extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 180;
+    }
+    writeFeatureEdgeMesh yes;
+    writeObj yes;
+}
+
+level045.stl
+{
+    extractionMethod extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 180;
+    }
+    writeFeatureEdgeMesh yes;
+    writeObj yes;
+}
+
+
+
+
+// ************************************************************************* //

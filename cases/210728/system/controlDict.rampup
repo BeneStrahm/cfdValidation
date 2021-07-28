@@ -1,0 +1,100 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.0                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     4.0;
+    format      ascii;
+    class       dictionary;
+    object      controlDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+#include "./vars/control"
+
+OptimisationSwitches
+{
+    //- Parallel IO file handler
+    // uncollated (default), collated or masterUncollated
+    fileHandler uncollated;
+    maxThreadFileBufferSize 0;
+    maxMasterFileBufferSize 1E9;
+}
+
+application     pimpleFoam;
+
+startFrom       latestTime;
+
+startTime       $SIM_START_TIME;
+
+stopAt          endTime;
+
+endTime         40;
+
+deltaT          $SIM_DELTA_TIME;
+
+writeControl    adjustableRunTime;
+
+writeInterval   #eval "$SIM_DELTA_TIME * $RESTART_FREQ";
+
+purgeWrite      2;
+
+writeFormat     binary;
+
+writePrecision  6;
+
+writeCompression off;
+
+timeFormat      general;
+
+timePrecision   6;
+
+runTimeModifiable true;
+
+adjustTimeStep  yes;
+maxCo           2.0;
+maxDeltaT       $SIM_DELTA_TIME;
+
+functions
+{
+    #includeIfPresent "./post/courant"
+    #includeIfPresent "./post/flowBoxVTK"
+    #includeIfPresent "./post/flowSurfVTK"
+    #includeIfPresent "./post/inlet"
+    #includeIfPresent "./post/forces"
+    #includeIfPresent "./post/vorticity"
+    #includeIfPresent "./post/magVorticity"
+    #includeIfPresent "./post/pressTapsRAW"
+    #includeIfPresent "./post/pressTapsVTK"
+    #includeIfPresent "./post/turbulenceFields"
+    #includeIfPresent "./post/yPlus"
+
+//    Not working in constant...
+//    fileUpdate1
+//    {
+//        type              timeActivatedFileUpdate;
+//        libs              (utilityFunctionObjects);
+//        writeControl      timeStep;
+//        writeInterval     1;
+//        fileToUpdate      "<constant>/dynamicMeshDict";
+//        timeVsFile
+//        (   
+//            (-1   "<constant>/dynamicMeshDict.0")
+//            (4    "<constant>/dynamicMeshDict.4")
+//            
+//        );
+//    
+//    }
+
+}
+
+libs
+(
+   "libdynamicLoadBalanceFvMesh.so"		// All AMR and LB enhancements
+);
+
+// ************************************************************************* //

@@ -1,0 +1,30 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2012                                  |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+
+VECTOR_Z 188.49556;
+Z_2_XMIN -1440.00;
+Z_2_XMAX -180.00;
+Z_2_YMIN -180.00;
+Z_2_YMAX 180.00;
+Z_2_ZMIN 0.00;
+Z_2_ZMAX 315.00;
+Z_3_XMIN -180.00;
+Z_3_XMAX 720.00;
+Z_3_YMIN -180.00;
+Z_3_YMAX 180.00;
+Z_3_ZMIN 0.00;
+Z_3_ZMAX 315.00;
+Z_4_XMIN -67.50;
+Z_4_XMAX 67.50;
+Z_4_YMIN -67.50;
+Z_4_YMAX 67.50;
+Z_4_ZMIN 0.00;
+Z_4_ZMAX 225.00;
+Z_2_REF_MIN_MAX 2;
+Z_3_REF_MIN_MAX 3;
+Z_4_REF_MIN_MAX 5;

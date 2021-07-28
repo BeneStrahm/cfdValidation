@@ -1,0 +1,84 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2012                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+
+// Medium zone with medium vorticity
+amr_zone_medium
+{
+    type composedAdaptCriteria;
+    operation and;
+    // operation or;
+    criteria
+    (
+        magVorticity_medium
+        {
+            type fieldBounds;
+            fieldName magVorticity;
+            lowerBound 1;
+            upperBound 5;
+            maxCellLevel 1; // default value very high number limits the maxium refinement level
+            minCellLevel 0; // default value 0 specify minimum refinement level
+            nLayer 1; // extends refinement zone by two layers
+        }
+        amr_zone_medium 
+        {
+            type geometric;
+            fieldName amr_zone_medium;
+            surftype box;
+            min ($Z_2_XMIN $Z_2_YMIN $Z_2_ZMIN);
+            max ($Z_3_XMAX $Z_2_YMAX $Z_2_ZMAX);
+        }
+        // Do not refine boundary layer
+        negate_boundary_layer
+        {
+            type geometric;
+            fieldName amr_zone_fine;
+            surftype box;
+            min ($Z_2_XMIN $Z_2_YMIN $Z_2_ZMIN);
+            max ($Z_3_XMAX $Z_2_YMAX 10);
+            negate true;
+        }
+    );
+}
+// Fine zone with high vorticity
+amr_zone_fine
+{
+    type composedAdaptCriteria;
+    operation and;
+    // operation or;
+    criteria
+    (
+        magVorticity_high
+        {
+            type fieldBounds;
+            fieldName magVorticity;
+            lowerBound 5;
+            upperBound 1000;
+            maxCellLevel 2; // default value very high number limits the maxium refinement level
+            minCellLevel 0; // default value 0 specify minimum refinement level
+            nLayer 2; // extends refinement zone by two layers
+        }
+        amr_zone_fine 
+        {
+            type geometric;
+            fieldName amr_zone_fine;
+            surftype box;
+            min ($Z_2_XMIN $Z_2_YMIN $Z_2_ZMIN);
+            max ($Z_3_XMAX $Z_2_YMAX $Z_2_ZMAX);
+        }
+        // Do not refine boundary layer
+        negate_boundary_layer
+        {
+            type geometric;
+            fieldName amr_zone_fine;
+            surftype box;
+            min ($Z_2_XMIN $Z_2_YMIN $Z_2_ZMIN);
+            max ($Z_3_XMAX $Z_2_YMAX 10);
+            negate true;
+        }
+    );
+}

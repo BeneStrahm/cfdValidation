@@ -1,0 +1,36 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2012                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+
+// Medium zone with medium vorticity
+amr_zone_medium
+{
+    type composedAdaptCriteria;
+    operation and;
+    // operation or;
+    criteria
+    (
+        turbulenceProperties:k
+        {
+            type fieldBounds;
+            fieldName turbulenceProperties:k;
+            lowerBound 1;
+            upperBound 1000;
+            maxCellLevel 1; // default value very high number limits the maxium refinement level
+            minCellLevel 0; // default value 0 specify minimum refinement level
+            nLayer 1; // extends refinement zone by two layers
+        }
+        geom_zone
+        {
+            type geometric;
+            fieldName amr_zone_medium;
+            surftype box;
+            min (-1280 -320   0);
+            max (  160  320 480);
+        }
+    );
+}

@@ -1,0 +1,34 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.0                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+
+#include "./vars/control"
+#include "./vars/postprocessing"
+#include "./vars/snappyHexMesh"
+
+flowBoxVTK
+{
+    type            vtkWrite;
+    libs            (utilityFunctionObjects);
+
+    timeStart   	$VTK_BOX_START_TIME;
+    writeControl   	adjustableRunTime;
+    writeInterval   #eval "$SIM_DELTA_TIME * $VTK_BOX_FREQ";
+    timeEnd   		$VTK_BOX_END_TIME;
+    
+    fields          (U magVorticity turbulenceProperties:k turbulenceProperties:L turbulenceProperties:I);
+
+    AMR_refZone_2_3
+    {
+        box
+        {
+            action  use;
+            source  box;
+            box     ($Z_2_XMIN $Z_2_YMIN $Z_2_ZMIN) ($Z_3_XMAX $Z_2_YMAX $Z_2_ZMAX);
+        }
+    }
+}

@@ -1,0 +1,80 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.0                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+
+#include "./vars/control"
+#include "./vars/postprocessing"
+
+flowSurfVTK
+{
+    type            vtkWrite;
+    libs            (utilityFunctionObjects);
+
+    enabled 		true;
+
+    timeStart   	$FLOW_SURF_START_TIME;
+    writeControl   	adjustableRunTime;
+    writeInterval   #eval "$SIM_DELTA_TIME * $FLOW_SURF_FREQ";
+    timeEnd   		$FLOW_SURF_END_TIME;
+
+    surfaceFormat   	vtk;
+    fields          	( U );
+
+    interpolationScheme cellPoint;
+
+    surfaces
+    (
+        XY_Plane_1
+        {
+            type            cuttingPlane;
+            planeType       pointAndNormal;
+            pointAndNormalDict
+            {
+                basePoint       (0 0 $XY_PLANE_Z_1);
+                normalVector    (0 0 1);
+            }
+            interpolate     true;
+        }
+
+        XY_Plane_2
+        {
+            type            cuttingPlane;
+            planeType       pointAndNormal;
+            pointAndNormalDict
+            {
+                basePoint       (0 0 $XY_PLANE_Z_2);
+                normalVector    (0 0 1);
+            }
+            interpolate     true;
+        }
+
+        XZ_Plane_1
+        {
+            type            cuttingPlane;
+            planeType       pointAndNormal;
+            pointAndNormalDict
+            {
+                basePoint       (0 0 0);
+                normalVector    (0 1 0);
+            }
+            interpolate     true;
+        }
+
+	  YZ_Plane_1
+        {
+            type            cuttingPlane;
+            planeType       pointAndNormal;
+            pointAndNormalDict
+            {
+                basePoint       ($YZ_PLANE_X_1 0 0);
+                normalVector    (1 0 0);
+            }
+            interpolate     true;
+        }
+    );
+}
+

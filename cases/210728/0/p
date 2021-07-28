@@ -1,0 +1,85 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.0                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     4.0;
+    format      ascii;
+    class       volScalarField;
+    object      p;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+// Dimensions of the field [ kg | m | s | K | mol | A | cd ]
+
+dimensions      [0 2 -2 0 0 0 0];
+
+// Value of internal field
+
+internalField   uniform 0;
+
+// List of boundary patches
+
+boundaryField
+{
+
+    // Pressure Gradient at the Inlet is zero  
+    inlet
+    {
+        type            zeroGradient;
+    }
+    
+    // Pressure Gradient at the Upper Wall is zero
+    top 
+    {
+        type            totalPressure;
+        p0				uniform 0;
+        value			uniform 0;
+    }
+
+    // Pressure at the outlet is zero    
+    outlet
+    {
+        type            totalPressure;
+        p0				uniform 0;
+        value			uniform 0;
+    }
+
+    // Pressure Gradient at the Lower Wall is zero
+    bottom 
+    {
+        type            zeroGradient;
+    }
+
+    // Pressure at Side Walls is symmetric
+    // frontAndBack
+    // {
+    //     type            symmetry;
+    // }
+
+    front
+    {
+        type            totalPressure;
+        p0				uniform 0;
+        value			uniform 0;
+    }
+
+    back
+    {
+        type            totalPressure;
+        p0				uniform 0;
+        value			uniform 0;
+    }
+
+    building
+    {
+        type            zeroGradient;
+    }
+
+}
+
+// ************************************************************************* //

@@ -1,0 +1,32 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2012                                  |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+
+magVorticity
+{
+    // Mandatory entries (unmodifiable)
+    type                magSqr;
+    libs                (fieldFunctionObjects);
+
+    // Optional (inherited) entries
+    field               vorticity;
+    enabled             true;
+    log                 true;
+    executeControl      timeStep;
+    executeInterval     1;
+    writeControl        writeTime;  //purge
+    //writeControl        timeStep;   // No Purge
+    //writeInterval       1;          // No Purge
+    result              magVorticity;
+}
+
+readMagVorticityFields
+{
+    type                readFields;
+    libs                (fieldFunctionObjects);
+    fields              (magVorticity);
+}

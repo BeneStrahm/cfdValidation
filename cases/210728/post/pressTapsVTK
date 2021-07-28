@@ -1,0 +1,95 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.0                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+
+#include "./vars/control"
+#include "./vars/postprocessing"
+
+pressTapsVTK
+{
+    type            	surfaces;
+    libs 	            ("libsampling.so");
+
+    enabled 		true;
+
+    timeStart   	$PRESS_TAPS_START_TIME;
+    writeControl   	adjustableRunTime;
+    writeInterval   #eval "$SIM_DELTA_TIME * $PRESS_TAPS_FREQ";
+    timeEnd   		$PRESS_TAPS_END_TIME;
+    surfaceFormat raw;
+
+    surfaceFormat   	vtk;
+    fields          	( p );
+
+    interpolationScheme cell;
+
+    surfaces
+    (
+        building
+        {
+            type            patch;
+            patches         (
+
+    // AUTOMATICALLY INSERT EACH LEVEL AFTER FOLLOWING KEYWORD
+    // CONTENT FOR PRESSTAPSVTK AUTOMATICALLY CREATED
+
+                   level000
+                   level001
+                   level002
+                   level003
+                   level004
+                   level005
+                   level006
+                   level007
+                   level008
+                   level009
+                   level010
+                   level011
+                   level012
+                   level013
+                   level014
+                   level015
+                   level016
+                   level017
+                   level018
+                   level019
+                   level020
+                   level021
+                   level022
+                   level023
+                   level024
+                   level025
+                   level026
+                   level027
+                   level028
+                   level029
+                   level030
+                   level031
+                   level032
+                   level033
+                   level034
+                   level035
+                   level036
+                   level037
+                   level038
+                   level039
+                   level040
+                   level041
+                   level042
+                   level043
+                   level044
+                   level045
+
+					);
+            interpolate     true;
+	   }
+
+    );
+}
+
+
+// ************************************************************************* //

@@ -1,0 +1,52 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2012                                  |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+
+#include "./vars/control"
+#include "./vars/postprocessing"
+
+    // AUTOMATICALLY INSERT EACH LEVEL AFTER FOLLOWING KEYWORD
+    // CONTENT FOR FORCES AUTOMATICALLY CREATED
+
+forces
+{
+    // Mandatory entries
+    type            forces;
+    libs            ("libforces.so");
+    patches         (building);
+
+    // Optional entries
+    timeStart       $FORCES_START_TIME;
+    writeControl    adjustableRunTime;
+    writeInterval   #eval "$SIM_DELTA_TIME * $FORCES_FREQ";
+    timeEnd         $FORCES_END_TIME;
+
+    // Field names
+    p               p;
+    U               U;
+    rho             rhoInf;
+
+    // For incompressible cases, i.e. solved using the kinematic pressure the rho entry can be used to set the free stream density
+    rhoInf          1.200;      // Reference density, fluid
+
+    // Centre of rotation for moment calculations
+    CofR            (0 0 0);
+
+    // Spatial data binning
+    // - extents given by the bounds of the input geometry
+    binData
+    {
+        nBin        40;
+        direction   (0 0 1);
+        cumulative  no;
+    }
+}
+
+
+
+
+// ************************************************************************* //

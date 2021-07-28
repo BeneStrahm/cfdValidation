@@ -1,0 +1,35 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+
+#include "./vars/control"
+#include "./vars/postprocessing"
+
+pressureCorrection
+{
+    type            	probes;
+    libs 	            ("libsampling.so");
+
+    enabled 		true;
+
+    interpolationScheme cellPoint;
+    
+    timeStart   	$PRESS_TAPS_START_TIME;
+    writeControl   	adjustableRunTime;
+    writeInterval   #eval "$SIM_DELTA_TIME * $PRESS_TAPS_FREQ";
+    timeEnd   		$PRESS_TAPS_END_TIME;
+
+    fields          	( p );
+
+    probeLocations
+    (
+        ($X_PRESS_1 0 $Z_PRESS_1)
+	    ($X_PRESS_1 0 $Z_PRESS_2)
+	    ($X_PRESS_2 0 $Z_PRESS_1)
+	    ($X_PRESS_2 0 $Z_PRESS_2)
+    );
+ }

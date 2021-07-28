@@ -1,0 +1,32 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+
+#include "./vars/control"
+#include "./vars/probeLoc"
+
+inlet
+{
+    type            	probes;
+    libs 	            ("libsampling.so");
+
+    enabled 		true;
+
+    interpolationScheme cellPoint;
+    
+    timeStart   	$INLET_START_TIME;
+    writeControl   	adjustableRunTime;
+    writeInterval   #eval "$SIM_DELTA_TIME * $INLET_FREQ";
+    timeEnd   		$INLET_END_TIME;
+
+    fields          	( U );
+
+    probeLocations
+    (
+        $PROBE_ARR
+    );
+ }

@@ -1,0 +1,36 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2012                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+
+turbulenceFields
+{
+    // Mandatory entries
+    type            turbulenceFields;
+    libs            (fieldFunctionObjects);
+
+    // k: Turbulent kinetic energy
+    // L: Integral-length/Mixing-length scale
+    // I: Turbulence intensity
+
+    fields          (k L I);    
+
+    // Optional (inherited) entries
+    enabled             true;
+    log                 true;
+    executeControl      timeStep;
+    executeInterval     1;
+    writeControl        writeTime;  //purge
+    //writeControl        timeStep;   // No Purge
+    //writeInterval       1;          // No Purge
+}
+
+readTurbulenceFields
+{
+    type                readFields;
+    libs                (fieldFunctionObjects);
+    fields              (k);
+}

@@ -1,0 +1,16 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2012                                  |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+
+
+X_PRESS_1 -60.0;
+X_PRESS_2 -120.0;
+Z_PRESS_1 60.0;
+Z_PRESS_2 120.0;
+XY_PLANE_Z_1 60.0;
+XY_PLANE_Z_2 120.0;
+YZ_PLANE_X_1 0.0;

@@ -1,0 +1,30 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2012                                  |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+
+SIM_START_TIME 0.00000;
+SIM_DELTA_TIME 0.01600;
+SIM_END_TIME 100.00000;
+RESTART_FREQ 1;
+FORCES_START_TIME 40.00000;
+FORCES_FREQ 6;
+FORCES_END_TIME 100.00000;
+INLET_START_TIME 40.00000;
+INLET_FREQ 14;
+INLET_END_TIME 100.00000;
+FLOW_SURF_START_TIME 40.00000;
+FLOW_SURF_FREQ 10;
+FLOW_SURF_END_TIME 100.00000;
+VTK_BOX_START_TIME 40.00000;
+VTK_BOX_FREQ 10;
+VTK_BOX_END_TIME 100.00000;
+PRESS_TAPS_START_TIME 40.00000;
+PRESS_TAPS_FREQ 10;
+PRESS_TAPS_END_TIME 100.00000;
+ROT_VEC_X 1.0000000000;
+ROT_VEC_Y 0.0000000000;
+ROT_VEC_Z 0.0000000000;
